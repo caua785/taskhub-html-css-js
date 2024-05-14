@@ -6,7 +6,11 @@
 }
 
 body {
-  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: 64px;
+  font-size: 16px;
   background-color: var(--gray-50);
   font-weight: 500;
 
@@ -48,13 +52,27 @@ button {
   font-family: var(--fonte-primaria);
 }
 
-h1 {
+main {
+  margin-top: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.content > :last-child {
+  margin-top: 64px;
+}
+
+.header__title {
   color: var(--cor-primaria);
   font-size: 3rem;
   font-weight: 700;
 }
 
-button {
+.button--primary {
   padding: 16px 24px;
   height: auto;
   width: auto;
@@ -71,20 +89,20 @@ button {
   font-weight: 600;
 }
 
-button:hover {
+.button--primary:hover {
   background-color: var(--blue-600);
   transform: translateY(-0.2rem);
 
   box-shadow: var(--efeito-box-shadow-56);
 }
 
-button:focus {
+.button--primary:focus {
   background-color: var(--blue-700);
   border-color: var(--cor-primaria);
   box-shadow: var(--efeito-box-shadow-32);
 }
 
-input {
+.input--search {
   width: 280px;
   border: 2px solid var(--gray-200);
   padding: 0px 16px;
@@ -100,25 +118,27 @@ input {
   color: var(--gray-400);
 }
 
-input:hover {
+.input--search:hover {
   border-color: var(--gray-300);
   color: var(--gray-500);
 }
 
-input:focus {
+.input--search:focus {
   border-color: var(--cor-primaria);
 }
 
-input:focus + i {
+.input--search:focus + .icon--search {
   background-color: var(--cor-primaria);
   color: var(--gray-100);
 }
 
-span {
+.box__input,
+.box__button {
   display: flex;
+  justify-content: center;
 }
 
-i {
+.icon--search {
   font-size: 24px;
   color: var(--gray-700);
   background-color: var(--gray-200);
@@ -127,7 +147,28 @@ i {
   transition: 0.3s background-color ease-in-out, 0.3s color ease-in-out;
 }
 
-i:hover {
+.icon--search:hover {
   background-color: var(--gray-300);
   color: var(--gray-800);
+}
+
+.task--title{
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gray-400);
+
+}
+
+.task__cards{
+  flex-wrap: wrap;
+  display: flex;
+  gap: 32px;
+}
+.card{
+  width: 280px;
+  height: 200px;
+  background-color: var(--cor-primaria);
+  border-radius: 12px;
+
+
 }

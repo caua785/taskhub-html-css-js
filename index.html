@@ -16,14 +16,43 @@
   </head>
   <body>
     <header>
-      <h1>TaskHub</h1>
+      <h1 class="header__title">TaskHub</h1>
     </header>
     <main>
-      <span>
-        <input type="search" autocomplete="on" placeholder="Pesquisa" />
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </span>
-      <button>Nova Tarefa+</button>
+      <div class="content">
+        <span class="box__input">
+          <input
+            class="input--search"
+            type="search"
+            autocomplete="on"
+            placeholder="Pesquisa"
+          />
+          <i class="fa-solid fa-magnifying-glass icon--search"></i>
+        </span>
+        <section class="box__task">
+          <h2 class="task--title">Hoje</h2>
+          <div class="task__cards">
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+          </div>
+        </section>
+        <section class="box__task">
+          <h2 class="task--title">Esta semana</h2>
+          <div class="task__cards">
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+            <span class="card"></span>
+          </div>
+        </section>
+        <span class="box__button">
+          <button class="button--primary">Nova Tarefa+</button>
+        </span>
+      </div>
     </main>
     <footer></footer>
   </body>
