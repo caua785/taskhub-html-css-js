@@ -1,0 +1,41 @@
+.box__button {
+  display: flex;
+  justify-content: center; /* Justify-content/Justificar conteudo na horizontal */
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem; /* border-radius: Arredondamento do componente */
+  cursor: pointer;
+  outline: none; /* outline: Borda extra do componente */
+  transition: 0.3s all ease-in-out;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0.125rem solid var(--cor-primaria);
+  box-shadow: var(--efeito-box-shadow-32-primaria);
+}
+
+.button:hover {
+  background-color: var(--blue-600);
+  color: var(--gray-50);
+  transform: translateY(-0.4rem);
+  box-shadow: var(--efeito-box-shadow-56-primaria);
+}
+
+.button:focus {
+  background-color: var(--blue-700);
+  border-color: var(--cor-primaria);
+  box-shadow: var(--efeito-box-shadow-48-primaria);
+  transform: translateY(-0.2rem);
+  color: var(--gray-50);
+}
+
+.button--primary {
+  background-color: var(--cor-primaria);
+  color: var(--gray-50);
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: var(--cor-primaria);
+}

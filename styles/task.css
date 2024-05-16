@@ -1,0 +1,118 @@
+.box__task {
+  flex-direction: column;
+  display: flex;
+  gap: 2rem;
+}
+
+.task--title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--gray-400);
+}
+
+.task__cards {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 2rem; /* gap: Espaçamento entre os componentes FILHOS de um grupo */
+}
+.card {
+  box-sizing: border-box;
+  max-width: 24rem;
+  min-width: 20rem;
+  border-radius: 0.75rem;
+  transition: 0.3s all ease-in-out;
+  padding: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column; /*flex-direction: Muda direção dos filhos */
+  font-size: 1.125rem;
+  justify-content: space-between;
+}
+
+.card--header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card--description {
+  font-weight: 700;
+  word-break: break-all; /* break-all: Se o texto estiver com a propriedade break-word, utilizar o break-all para fazer a palavra ser preenchida o maximo
+    de caracteres na linha atual.*/
+  word-wrap: break-word; /* break-word: Utilizado para quebrar as frases */
+}
+
+.card--blue {
+  background-color: var(--cor-primaria);
+  box-shadow: var(--efeito-box-shadow-32-light);
+  color: var(--gray-100);
+}
+.card--blue:hover {
+  box-shadow: var(--efeito-box-shadow-56-light);
+}
+
+.card--white {
+  color: var(--gray-400);
+  background-color: var(--white);
+  box-shadow: var(--efeito-box-shadow-32-primaria);
+}
+
+.card--white:hover {
+  box-shadow: var(--efeito-box-shadow-56-primaria);
+}
+
+.card--button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-state {
+  padding: 0.5rem 1.5rem;
+  border-radius: 4rem;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s all ease-in-out;
+}
+
+.state--concluido {
+  color: var(--cor-primaria);
+  box-shadow: var(--efeito-box-shadow-32-light);
+  background-color: var(--gray-50);
+  border: 0.125rem solid var(--gray-50);
+}
+
+.state--concluido:hover {
+  box-shadow: var(--efeito-box-shadow-56-light);
+  background-color: var(--blue-500);
+  color: var(--gray-50);
+}
+
+.state--concluido:focus {
+  background-color: var(--blue-600);
+  box-shadow: var(--efeito-box-shadow-48-light);
+  color: var(--gray-50);
+}
+
+.card--blue:focus-within {
+  background-color: var(--blue-600);
+}
+
+.state--nao-concluido {
+  color: var(--gray-50);
+  background-color: var(--cor-primaria);
+  box-shadow: var(--efeito-box-shadow-32-primaria);
+  border: 0.125rem solid var(--cor-primaria);
+}
+
+.state--nao-concluido:hover {
+  box-shadow: var(--efeito-box-shadow-56-primaria);
+  background-color: var(--blue-600);
+  border-color: var(--blue-600);
+}
+
+.state--nao-concluido:focus {
+  background-color: var(--blue-700);
+  box-shadow: var(--efeito-box-shadow-56-primaria);
+  border-color: var(--blue-700);
+}
