@@ -18,14 +18,20 @@ body {
   background-color: var(--gray-50);
   font-weight: 500;
 
-  --cor-primaria: var(--blue-500);
-  --fonte-primaria: "Inter", sans-serif;
-  --efeito-box-shadow-32-primaria: 0 0.25rem 1rem 0 rgba(0, 166, 251, 0.32);
-  --efeito-box-shadow-32-light: 0 0.25rem 1rem 0 rgba(255, 255, 255, 0.32);
-  --efeito-box-shadow-56-primaria: 0 0.25rem 1rem 0 rgba(0, 166, 251, 0.56);
-  --efeito-box-shadow-56-light: 0 0.25rem 1rem 0 rgba(255, 255, 255, 0.56);
-  --efeito-box-shadow-48-primaria: 0 0.25rem 1rem 0 rgba(0, 166, 251, 0.48);
-  --efeito-box-shadow-48-light: 0 0.25rem 1rem 0 rgba(255, 255, 255, 0.48);
+  --color-primary: var(--blue-500);
+  --font-primary: "Inter", sans-serif;
+  
+  --effect-box-shadow-32-primary: 0 0.25rem 1rem 0 rgba(0, 166, 251, 0.32);
+  --effect-box-shadow-48-primary: 0 0.25rem 1rem 0 rgba(0, 166, 251, 0.48);
+  --effect-box-shadow-56-primary: 0 0.25rem 1rem 0 rgba(0, 166, 251, 0.56);
+
+  --effect-box-shadow-32-light: 0 0.25rem 1rem 0 rgba(255, 255, 255, 0.32);
+  --effect-box-shadow-48-light: 0 0.25rem 1rem 0 rgba(255, 255, 255, 0.48);
+  --effect-box-shadow-56-light: 0 0.25rem 1rem 0 rgba(255, 255, 255, 0.56);
+  
+  --effect-box-shadow-08-dark: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.08);
+  --effect-box-shadow-12-dark: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.12);
+  --effect-box-shadow-16-dark: 0 0.25rem 1rem 0 rgba(0, 0, 0, 0.16);
 
   --blue-50: #eff9ff;
   --blue-100: #def1ff;
@@ -57,7 +63,7 @@ body {
 body,
 input,
 button {
-  font-family: var(--fonte-primaria);
+  font-family: var(--font-primary);
 }
 
 main {
@@ -76,7 +82,12 @@ main {
 }
 
 .title {
-  color: var(--cor-primaria);
-  font-size: 3rem; /* font-size: Tamanho da fonte */
+  color: var(--color-primary);
   font-weight: 700; /* font-weight: espessura da fonte */
 }
+
+.title--main{
+  font-size: 3rem; /* font-size: Tamanho da fonte */
+}
+
+

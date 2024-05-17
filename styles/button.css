@@ -11,31 +11,31 @@
   transition: 0.3s all ease-in-out;
   font-size: 1rem;
   font-weight: 600;
-  border: 0.125rem solid var(--cor-primaria);
-  box-shadow: var(--efeito-box-shadow-32-primaria);
+  border: 0.125rem solid var(--color-primary);
+  box-shadow: var(--effect-box-shadow-32-primary);
 }
 
 .button:hover {
   background-color: var(--blue-600);
   color: var(--gray-50);
   transform: translateY(-0.4rem);
-  box-shadow: var(--efeito-box-shadow-56-primaria);
+  box-shadow: var(--effect-box-shadow-56-primary);
 }
 
 .button:focus {
   background-color: var(--blue-700);
-  border-color: var(--cor-primaria);
-  box-shadow: var(--efeito-box-shadow-48-primaria);
+  border-color: var(--color-primary);
+  box-shadow: var(--effect-box-shadow-48-primary);
   transform: translateY(-0.2rem);
   color: var(--gray-50);
 }
 
 .button--primary {
-  background-color: var(--cor-primaria);
+  background-color: var(--color-primary);
   color: var(--gray-50);
 }
 
 .button--secondary {
   background-color: transparent;
-  color: var(--cor-primaria);
+  color: var(--color-primary);
 }

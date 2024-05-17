@@ -20,12 +20,13 @@
   </head>
   <body>
     <header>
-      <h1 class="title">TaskHub</h1>
+      <h1 class="title title--main">TaskHub</h1>
     </header>
     <main>
-      <!-- <div class="content">
+      <div class="content">
         <span class="box__input">
           <input
+            id="inputSearch"
             class="input--search"
             type="search"
             autocomplete="on"
@@ -35,7 +36,7 @@
         </span>
         <section class="box__task">
           <h2 class="task--title">Hoje</h2>
-          <div class="task__cards">   
+          <div class="task__cards">
             <span class="card card--blue">
               <span class="card--header">
                 <p>00:00 - 00:00</p>
@@ -53,25 +54,48 @@
               </span>
               <p class="card--description">Descrição da tarefa</p>
               <span class="card--button">
-                <button class="button-state state--nao-concluido">Concluido</button>
+                <button class="button-state state--nao-concluido">
+                  Concluido
+                </button>
               </span>
             </span>
           </div>
         </section>
         <span class="box__button">
-          <button class="button--primary">Nova Tarefa+</button>
+          <button class="button button--primary">Nova Tarefa+</button>
         </span>
-      </div> -->
-      <div class="modal">
-        <h1 class="title">Adicionar Tarefa</h1>
-        <input type="text" />
-        <input type="time" />
-        <input type="time" />
-        <input type="date" />
-        <button class="button button--secondary">Cancelar</button>
-        <button class="button button--primary">Confirmar</button>
+      </div>
+      <div class="box__modal" view-modal="false">
+        <div class="modal">
+          <h1 class="title title--modal">Adicionar Tarefa</h1>
+          <form class="modal__form" action="">
+            <span class="form__input">
+              <label for="input-task">Descrição da tarefa</label>
+              <input id="input-task" type="text" />
+            </span>
+            <span class="form--date">
+              <span class="form__input">
+                <label for="input-time-start">Início</label>
+                <input id="input-time-start" type="time" />
+              </span>
+              <span class="form__input">
+                <label for="input-time-end">Término</label>
+                <input id="input-time-end" type="time" />
+              </span>
+              <span class="form__input">
+                <label for="input-date">Data</label>
+                <input id="input-date" type="date" />
+              </span>
+            </span>
+          </form>
+          <span class="modal__buttons">
+            <button class="button button--secondary">Cancelar</button>
+            <button class="button button--primary">Confirmar</button>
+          </span>
+        </div>
       </div>
     </main>
     <footer></footer>
+    <script src="script/script.js"></script>
   </body>
 </html>

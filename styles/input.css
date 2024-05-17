@@ -19,11 +19,11 @@
 }
 
 .input--search:focus {
-  border-color: var(--cor-primaria);
+  border-color: var(--color-primary);
 }
 
 .input--search:focus + .icon--search {
-  background-color: var(--cor-primaria);
+  background-color: var(--color-primary);
   color: var(--gray-100);
 }
 
