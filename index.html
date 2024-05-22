@@ -26,7 +26,7 @@
       <div class="content">
         <span class="box__input">
           <input
-            id="inputSearch"
+            id="input-search"
             class="input--search"
             type="search"
             autocomplete="on"
@@ -62,10 +62,10 @@
           </div>
         </section>
         <span class="box__button">
-          <button class="button button--primary">Nova Tarefa+</button>
+          <button id="button-add-task" class="button button--primary">Nova Tarefa+</button>
         </span>
       </div>
-      <div class="box__modal" view-modal="false">
+      <div id="modal" class="box__modal" view-modal="false">
         <div class="modal">
           <h1 class="title title--modal">Adicionar Tarefa</h1>
           <form class="modal__form" action="">
@@ -89,8 +89,8 @@
             </span>
           </form>
           <span class="modal__buttons">
-            <button class="button button--secondary">Cancelar</button>
-            <button class="button button--primary">Confirmar</button>
+            <button id="button-cancel" class="button button--secondary">Cancelar</button>
+            <button id="button-confirm" class="button button--primary">Confirmar</button>
           </span>
         </div>
       </div>
