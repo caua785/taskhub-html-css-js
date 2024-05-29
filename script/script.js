@@ -6,12 +6,13 @@ const inputDate = document.getElementById("input-date");
 
 const modal = document.getElementById("modal");
 
-const buttonAddTask = document.getElementById("button-add-task");
 const buttonCancel = document.getElementById("button-cancel");
 const buttonConfirm = document.getElementById("button-confirm");
 
 const boxTask = document.getElementById("box-task");
 const taskCards = document.getElementById("task-cards");
+
+const content = document.getElementById("content");
 
 // const sectionTitle = document.createElement("h2");
 
@@ -21,10 +22,6 @@ const taskCards = document.getElementById("task-cards");
 // boxTask.appendChild(sectionTitle);
 
 let tasks = [];
-// Abrir o modal
-buttonAddTask.addEventListener("click", () => {
-  modal.setAttribute("view-modal", true);
-});
 
 // Fechar o modal
 buttonCancel.addEventListener("click", () => {
@@ -33,6 +30,7 @@ buttonCancel.addEventListener("click", () => {
 
 // Cadastrar uma tarefa
 buttonConfirm.addEventListener("click", () => {
+  findSection(inputDate.value)
   const isValid = validationForm();
   const task = {
     description: inputTask.value,
@@ -45,10 +43,16 @@ buttonConfirm.addEventListener("click", () => {
     createTask(task);
     tasks.push(task);
     clearForm();
+    modal.setAttribute("view-modal", false);
+  } else if (
+    inputTimeEnd.value < inputTimeStart.value &&
+    inputTimeStart.value !== "" &&
+    inputTimeEnd.value !== ""
+  ) {
+    alert("Horario de finalização da tarefa deve ser maior que o inicial");
   } else {
     alert("Preencha todos os campos");
   }
-
 });
 
 // Limpar o formuladrio
@@ -64,7 +68,8 @@ function validationForm() {
     inputTask.value !== "" &&
     inputTimeStart.value !== "" &&
     inputTimeEnd.value !== "" &&
-    inputDate.value !== ""
+    inputDate.value !== "" &&
+    inputTimeEnd.value >= inputTimeStart.value
   );
 }
 
@@ -110,8 +115,51 @@ function createTask(task) {
   taskCards.appendChild(card);
 }
 
-function validationState(paramDate, paramTime) {
+function createButton() {
+  const box = document.createElement("span");
+  const button = document.createElement("button");
 
+  box.className = "box__button";
+  button.className = "button button--primary";
+  button.setAttribute("id", "button-add-task");
+  button.textContent = "Nova tarefa+";
+
+  button.addEventListener("click", () => {
+    modal.setAttribute("view-modal", true);
+  });
+
+  box.appendChild(button);
+  content.appendChild(box);
+}
+
+function createSections() {
+  const sectionsNames = ["Antigas", "Hoje", "Proximas"];
+
+  let i = 1;
+
+  while (i <= sectionsNames.length) {
+    const section = document.createElement("section");
+    const title = document.createElement("h2");
+    const box = document.createElement("div");
+
+    title.textContent = sectionsNames[i - 1];
+
+    section.className = "box__task";
+    title.className = "task--title";
+    box.className = "task__cards";
+
+    section.appendChild(title);
+    section.appendChild(box);
+
+    content.appendChild(section);
+
+    i++;
+  }
+
+  createButton();
+}
+
+function validationState(paramDate, paramTime) {
   // Obtenha a data e hora atuais
   const currentDateTime = new Date();
 
@@ -135,4 +183,22 @@ function formatDate(paramDate) {
   const formattedDate = `${day}/${month}/${year}`;
 
   return formattedDate;
+}
+
+createSections();
+
+function findSection(date) {
+  const [year, month, day] = date.split("-");
+  const dateParam = new Date(year, month - 1, day);
+
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  
+  if (dateParam < currentDate) {
+    console.log("antiga");
+  } else if (dateParam > currentDate) {
+    console.log("Amanhã");
+  } else {
+    console.log("Hoje");
+  }
 }
